@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test List</title>
+    <script type="text/javascript"src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+    <script>
+
+        $(function() {
+
+
+        var people = [];
+        $.getJSON('player_data.json', function(data) {
+       $.each(data.players, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.rank + "</td>" +
+           "<td>" + f.name + "</td>" + "<td>" + f.points + "</td>" + "<td>" + f.profileLink + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+        });
+
+        });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+    <div class="profile">
+    <table id= "userdata" border="2">
+        <thead>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Points</th>
+            <th>Link</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
+</div>
+
+</body>
+</html>
