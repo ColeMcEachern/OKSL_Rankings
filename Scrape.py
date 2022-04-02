@@ -48,13 +48,13 @@ data = {"players":[]}
 for num in player_ranks:
     data["players"].append({"rank": num, "name": player_names[num-1], "points": player_points[num-1], "profileLink": player_profile_links[num-1]})
 
-#
-# json_string = json.dumps(data)
-#
-# with open('player_data.json', 'w') as outfile:
-#     json.dump(json_string, outfile)
 
-with open("player_data.json", "r") as f:
-    d = json.load(f)
-    print(d)
+json_string = json.dumps(data)
+
+with open('player_data.json', 'w') as outfile:
+    json.dump(json_string, outfile)
+
+# with open("player_data.json", "r") as f:
+#     d = json.load(f)
+#     print(d)
 
